@@ -1,37 +1,22 @@
-<div >
-    <div>
-        <h2>{{title}}</h2>
-    </div>
-    <div>
-        <div>
+<div>
+    <mat-toolbar>
+        <span>MCG Acronyms</span>
+    </mat-toolbar>
+    <!-- <mat-grid-list cols="2" rowHeight="1:1"> -->
             <div *ngFor="let acronym of acronyms">
-                <p>{{ acronym.abrev }} </p>
-                <p><span class="font-weight-bold">Definition:</span> {{ acronym.def }}</p>
-                <p><span class="font-weight-bold">Notes:</span> {{ acronym.notes }}</p>
-                <!-- <mdb-card class="m-2">
-                    <mdb-card-body>
-                        <mdb-card-title>
-                            <h5>{{ acronym.abrev }}</h5>
-                        </mdb-card-title>
-            
-                        <mdb-card-text>
+                    <!-- <mat-grid-tile> -->
+                        <mat-card class="margin-cards">
+                            <mat-card-header>
+                                <mat-card-title>{{ acronym.abrev }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
                                 <p><span class="font-weight-bold">Definition:</span> {{ acronym.def }}</p>
                                 <p><span class="font-weight-bold">Notes:</span> {{ acronym.notes }}</p>
-                        </mdb-card-text>
-                    </mdb-card-body>
-                </mdb-card> -->
-            </div>
-        </div>
-        <div class="col-sm">
-            <!-- <mdb-card class="m-2">
-                <mdb-card-body>
-                    <mdb-card-title>
-                        <h5>Add a New Acronym or Term</h5>
-                    </mdb-card-title>
-                </mdb-card-body>
-            </mdb-card> -->
-        </div>
-    </div>
+                            </mat-card-content>
+                        </mat-card>
+                    <!-- </mat-grid-tile> -->
+                </div>
+    <!-- </mat-grid-list> -->
 </div>
 
 
