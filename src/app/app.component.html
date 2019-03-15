@@ -1,22 +1,30 @@
 <div>
-    <mat-toolbar>
+    <mat-toolbar color="primary">
         <span>MCG Acronyms</span>
-    </mat-toolbar>
-    <!-- <mat-grid-list cols="2" rowHeight="1:1"> -->
-            <div *ngFor="let acronym of acronyms">
-                    <!-- <mat-grid-tile> -->
-                        <mat-card class="margin-cards">
-                            <mat-card-header>
-                                <mat-card-title>{{ acronym.abrev }}</mat-card-title>
-                            </mat-card-header>
-                            <mat-card-content>
-                                <p><span class="font-weight-bold">Definition:</span> {{ acronym.def }}</p>
-                                <p><span class="font-weight-bold">Notes:</span> {{ acronym.notes }}</p>
-                            </mat-card-content>
-                        </mat-card>
-                    <!-- </mat-grid-tile> -->
-                </div>
-    <!-- </mat-grid-list> -->
+	</mat-toolbar>
+	<mat-tab-group>
+		<mat-tab label="Acronyms">
+			<!-- <mat-grid-list cols="3" rowHeight="2:1"> -->
+				<div *ngFor="let acronym of acronyms" class="margin-cards">
+					<!-- <mat-grid-tile> -->
+						<mat-card>
+							<mat-card-header>
+								<mat-card-title>{{ acronym.abrev }}</mat-card-title>
+							</mat-card-header>
+							<mat-card-content>
+								<p><span class="font-weight-bold">Definition:</span> {{ acronym.def }}</p>
+								<p><span class="font-weight-bold">Notes:</span> {{ acronym.notes }}</p>
+							</mat-card-content>
+						</mat-card>
+					<!-- </mat-grid-tile> -->
+				</div>
+			<!-- </mat-grid-list> -->
+		</mat-tab>
+		<mat-tab label="Add New">
+			Add New Content Here
+		</mat-tab>
+	</mat-tab-group>
+    
 </div>
 
 

@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule } from '@angular/material';
+import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule, MatTabsModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule } fr
     HttpClientModule,
     MatToolbarModule,
     MatCardModule,
-    MatGridListModule
+	MatGridListModule,
+	MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
