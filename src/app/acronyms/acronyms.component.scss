@@ -1,0 +1,39 @@
+.strong {
+	font-weight: bold;
+}
+
+.margin-cards {
+	margin: 5px 10px;
+	width: 50%;
+}
+
+.layout-row {
+    display: flex;
+    align-items: stretch;
+}
+
+.center {
+	text-align: center;
+}
+
+.inner {
+	display: inline-block;
+	height: 300px;
+	margin-top: 50px;
+}
+
+.example-form {
+	min-width: 150px;
+	max-width: 500px;
+	width: 100%;
+  }
+  
+.input-wrapper {
+	margin: 10px;
+	padding: 10px 0;
+	width: 100%;
+}
+
+.form-wrappper {
+	width: 100%;
+}
