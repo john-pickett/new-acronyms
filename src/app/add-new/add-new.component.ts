@@ -13,7 +13,23 @@ const httpOptions = {
 })
 export class AddNewComponent {
     constructor(private http:HttpClient) {}
-	
+	newAcro = {
+		abrev: "",
+		def: "",
+		notes: ""
+	};
+
+	setAcroData () {
+		this.postNewAcro().then(
+			data => console.log(data),
+			() => console.log('new acro posted')
+		)
+	}
+	postNewAcro () {
+		return this.http.post(environment.API_URL, this.newAcro).toPromise()
+			.then(res => res)
+			.catch(err => console.error(err))
+	}
     
 	
 }

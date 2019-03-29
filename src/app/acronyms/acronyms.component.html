@@ -10,16 +10,19 @@
 				<input matInput placeholder="Search" value="This doesn't work yet">
 			</mat-form-field>
 		</div>
-		<mat-card *ngFor="let acronym of acronyms" class="margin-cards">
-			<mat-card-header>
-				<mat-card-title>{{ acronym.abrev }}</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				<p><span class="strong">Definition:</span> {{ acronym.def }}</p>
-				<p><span class="strong">Notes:</span> {{ acronym.notes }}</p>
-			</mat-card-content>
-		</mat-card>
+		<mat-grid-list cols="3" rowHeight="2:1">
+			<mat-grid-tile *ngFor="let acronym of acronyms">
+				<mat-card>
+					<mat-card-header>
+						<mat-card-title>{{ acronym.abrev }}</mat-card-title>
+					</mat-card-header>
+					<mat-card-content>
+						<p><span class="strong">Definition:</span> {{ acronym.def }}</p>
+						<p><span class="strong">Notes:</span> {{ acronym.notes }}</p>
+					</mat-card-content>
+				</mat-card>
+			</mat-grid-tile>
+		</mat-grid-list>
 	</div>
-	
 </div>
 

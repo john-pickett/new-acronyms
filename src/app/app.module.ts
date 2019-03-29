@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AcronymsComponent } from './acronyms/acronyms.component';
 import { AddNewComponent } from './add-new/add-new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule, 
 	MatTabsModule, MatProgressSpinnerModule, MatDividerModule, MatFormFieldModule, 
 	MatInputModule } from '@angular/material';
@@ -20,7 +21,9 @@ import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule,
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+	BrowserAnimationsModule,
+	FormsModule,
+	ReactiveFormsModule,
 	HttpClientModule,
 	MatButtonModule,
     MatToolbarModule,
