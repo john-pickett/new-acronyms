@@ -1,15 +1,15 @@
 <div>
+    <div class="input-wrapper">
+        <mat-form-field class="form-wrapper">
+            <input matInput placeholder="Search" value="This doesn't work yet">
+        </mat-form-field>
+    </div>
 	<div *ngIf="!acronyms.length" class="center">
 		<div class="inner">
 			<mat-spinner></mat-spinner>
 		</div>
 	</div>
 	<div  #elseBlock>
-		<div class="input-wrapper">
-			<mat-form-field class="form-wrapper">
-				<input matInput placeholder="Search" value="This doesn't work yet">
-			</mat-form-field>
-		</div>
 		<mat-grid-list cols="3" rowHeight="2:1">
 			<mat-grid-tile *ngFor="let acronym of acronyms">
 				<mat-card>

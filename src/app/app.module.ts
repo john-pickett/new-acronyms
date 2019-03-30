@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule, 
 	MatTabsModule, MatProgressSpinnerModule, MatDividerModule, MatFormFieldModule, 
-	MatInputModule } from '@angular/material';
+	MatInputModule, MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule,
 	MatDividerModule,
 	MatFormFieldModule,
 	MatInputModule,
-	
+	MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

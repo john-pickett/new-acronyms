@@ -23,6 +23,9 @@
 	</mat-card-content>
 	<mat-divider></mat-divider>
 	<mat-card-actions>
-		<button mat-raised-button color="primary" (click)="setAcroData()">Save New</button>
+        <button mat-raised-button color="primary" (click)="setAcroData()">Save New</button>
+        <button mat-icon-button *ngIf="showCheck" [@enterAnimation]><mat-icon id="done-icon">check_circle_outline</mat-icon></button>
+
+        
 	</mat-card-actions>
 </mat-card>
