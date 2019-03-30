@@ -1,13 +1,25 @@
 <div>
     <mat-toolbar color="primary">
-        <span>MCG Acronyms</span>
+        <span>MCG Acronyms & Terms</span>
 	</mat-toolbar>
 	<mat-tab-group>
 		<mat-tab label="Acronyms">
-			<acronyms-list></acronyms-list>
+            <div *ngIf="acronyms.length" class="input-wrapper">
+                <mat-form-field class="form-wrapper" id="acro-search">
+                    <input matInput placeholder="Search" value="This doesn't work yet">
+                </mat-form-field>
+            </div>
+            <div *ngIf="!acronyms.length" class="center">
+                <div class="inner">
+                    <mat-spinner></mat-spinner>
+                </div>
+            </div>
+            <div #elseBlock>
+                <acronyms-list [acronyms]="acronyms"></acronyms-list>
+            </div>
 		</mat-tab>
 		<mat-tab label="Add New">
-			<add-new-acronym></add-new-acronym>
+			<add-new-acronym (newPosted)="onNewPost($event)"></add-new-acronym>
 		</mat-tab>
 	</mat-tab-group>
     

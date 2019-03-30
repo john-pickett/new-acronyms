@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { trigger, style, animate, transition } from '@angular/animations';
@@ -24,12 +24,14 @@ const httpOptions = {
             ])
           ]
         )
-      ]
+    ]
 })
 export class AddNewComponent {
+    @Output() newPosted = new EventEmitter<boolean>();
     constructor(private http:HttpClient) {}
     newAcro = {};
     showCheck = false;
+    loading = false;
 
     showSuccess () {
         this.showCheck = true;
@@ -38,12 +40,15 @@ export class AddNewComponent {
         },3000)
     }
 	setAcroData () {
+        this.loading = true;
 		this.postNewAcro().then(
 			data => console.log(data)
 		).then(() =>  {
             console.log('new acronym posted')
             this.newAcro = {};
             this.showSuccess();
+            this.newPosted.emit(true)
+            this.loading = false;
         })
 	}
 	postNewAcro () {
