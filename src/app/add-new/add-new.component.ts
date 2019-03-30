@@ -36,16 +36,15 @@ export class AddNewComponent {
     showSuccess () {
         this.showCheck = true;
         setTimeout(() => {
-            this.showCheck = false;
-        },3000)
+			this.showCheck = false;
+			this.newAcro = {};
+        },2000)
     }
 	setAcroData () {
         this.loading = true;
 		this.postNewAcro().then(
 			data => console.log(data)
 		).then(() =>  {
-            console.log('new acronym posted')
-            this.newAcro = {};
             this.showSuccess();
             this.newPosted.emit(true)
             this.loading = false;
