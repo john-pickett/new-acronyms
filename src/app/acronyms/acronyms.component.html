@@ -1,6 +1,6 @@
 <div>
     <mat-grid-list cols="3" rowHeight="2:1">
-        <mat-grid-tile *ngFor="let acronym of acronyms">
+        <mat-grid-tile *ngFor="let acronym of acronyms | orderBy: 'abrev' : false : true">
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>{{ acronym.abrev }}</mat-card-title>

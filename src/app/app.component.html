@@ -6,7 +6,7 @@
 		<mat-tab label="Acronyms">
             <div *ngIf="acronyms.length" class="input-wrapper">
                 <mat-form-field class="form-wrapper" id="acro-search">
-                    <input matInput placeholder="Search" value="This doesn't work yet">
+                    <input [(ngModel)]="term" matInput placeholder="Search">
                 </mat-form-field>
             </div>
             <div *ngIf="!acronyms.length" class="center">
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div #elseBlock>
-                <acronyms-list [acronyms]="acronyms"></acronyms-list>
+                <acronyms-list [acronyms]="acronyms | filter:term"></acronyms-list>
             </div>
 		</mat-tab>
 		<mat-tab label="Add New">
