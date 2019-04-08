@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; 
-
+import { OrderModule } from 'ngx-order-pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AcronymsComponent } from './acronyms/acronyms.component';
@@ -14,27 +15,29 @@ import {MatButtonModule, MatToolbarModule, MatCardModule, MatGridListModule,
 
 @NgModule({
   declarations: [
-	AppComponent,
-	AcronymsComponent,
-	AddNewComponent
+	  AppComponent,
+	  AcronymsComponent,
+	  AddNewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-	BrowserAnimationsModule,
-	FormsModule,
-	ReactiveFormsModule,
-	HttpClientModule,
-	MatButtonModule,
+		AppRoutingModule,
+		OrderModule,
+		Ng2SearchPipeModule,
+	  BrowserAnimationsModule,
+	  FormsModule,
+	  ReactiveFormsModule,
+	  HttpClientModule,
+	  MatButtonModule,
     MatToolbarModule,
     MatCardModule,
-	MatGridListModule,
-	MatTabsModule,
-	MatProgressSpinnerModule,
-	MatDividerModule,
-	MatFormFieldModule,
-	MatInputModule,
-	MatIconModule
+	  MatGridListModule,
+	  MatTabsModule,
+	  MatProgressSpinnerModule,
+	  MatDividerModule,
+	  MatFormFieldModule,
+	  MatInputModule,
+	  MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
