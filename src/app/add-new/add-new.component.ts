@@ -38,9 +38,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class AddNewComponent {
     @Output() newPosted = new EventEmitter<boolean>();
     constructor(private http:HttpClient) {}
-    newAcro = {};
+    newAcro: any = {};
     showCheck = false;
-    loading = false;
+	loading = false;
 
     showSuccess () {
         this.showCheck = true;
@@ -50,6 +50,10 @@ export class AddNewComponent {
         },2000)
     }
 	setAcroData () {
+		// check for required fields
+		if (!(this.newAcro.abrev || this.newAcro.def)) {
+			return;
+		}
         this.loading = true;
 		this.postNewAcro().then(
 			data => console.log(data)
@@ -70,7 +74,7 @@ export class AddNewComponent {
 	  ]);
 
 	defFormControl = new FormControl('', [
-	Validators.required
+		Validators.required
 	]);
 	
 	acroMatcher = new MyErrorStateMatcher();
