@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { trigger, style, animate, transition } from '@angular/animations';
@@ -6,6 +8,13 @@ import { trigger, style, animate, transition } from '@angular/animations';
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+	isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+	  const isSubmitted = form && form.submitted;
+	  return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+	}
+}
 
 @Component({
     selector: 'add-new-acronym',
@@ -55,6 +64,16 @@ export class AddNewComponent {
 			.then(res => res)
 			.catch(err => console.error(err))
 	}
-    
+
+	acroFormControl = new FormControl('', [
+		Validators.required
+	  ]);
+
+	defFormControl = new FormControl('', [
+	Validators.required
+	]);
+	
+	acroMatcher = new MyErrorStateMatcher();
+    defMatcher = new MyErrorStateMatcher();
 	
 }
