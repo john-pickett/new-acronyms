@@ -6,15 +6,17 @@
 		<p>We're delighted that you want to add to the collection of acronyms. Enter the information below and submit it when ready.</p>
 		<form class="example-form">
 			<mat-form-field class="example-full-width spacer">
-				<input matInput placeholder="Acronym" value="" [(ngModel)]="newAcro.abrev" name="acronym">
-				<!-- <input [(ngModel)]="playerName"> -->
+				<input matInput placeholder="Acronym" value="" [(ngModel)]="newAcro.abrev" name="acronym"
+					[formControl]="acroFormControl" [errorStateMatcher]="acroMatcher" />
 				<mat-hint align="start">Example: OM Team</mat-hint>
+				<mat-error>Required</mat-error>
 			</mat-form-field>
 			<mat-form-field class="example-full-width spacer">
-				<input matInput placeholder="Definition" value="" [(ngModel)]="newAcro.def" name="definition">
+				<input matInput placeholder="Definition" value="" [(ngModel)]="newAcro.def" name="definition"
+					[formControl]="defFormControl" [errorStateMatcher]="defMatcher" />
 				<mat-hint align="start">Example: Operations Modernization Team</mat-hint>
+				<mat-error>Required</mat-error>
 			</mat-form-field>
-			
 			<mat-form-field class="example-full-width spacer">
 				<textarea matInput placeholder="Notes (Optional)" [(ngModel)]="newAcro.notes"
 					name="notes"></textarea>
